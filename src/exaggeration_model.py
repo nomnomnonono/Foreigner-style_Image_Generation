@@ -2,7 +2,7 @@ import math
 import random
 
 import torch
-from model import (
+from src.model import (
     ConstantInput,
     EqualLinear,
     ExaggerationLayer,

@@ -1,14 +1,26 @@
 import random
+
 import gradio as gr
+from src.generate import Generator
 
-def get_foturne(your_name):
-    fortune_lists = ['大吉', '吉', '小吉', '凶', '末吉']
-    fortune_result = random.choice(fortune_lists)
-    return your_name + "さんの今日の運勢は・・・" + fortune_result + "です"
+generator = Generator()
 
 
-demo = gr.Interface(fn=get_foturne,
-                    inputs="text",
-                    outputs="text")
+def main():
+    with gr.Blocks() as app:
+        with gr.Row():
+            with gr.Column(scale=1):
+                input = gr.Image(type="filepath", label="Image")
+                idx = gr.Radio([1, 2, 3, 4, 5, 6, 7, 8], label="Style Index", value=1)
+                submit_btn = gr.Button(label="Submit")
+            with gr.Column(scale=1):
+                output = gr.Image(type="filepath", label="Output")
 
-demo.launch(server_name = "0.0.0.0", server_port=8070, share=True)
+        input.change(fn=generator.change, inputs=[input], outputs=None)
+        submit_btn.click(fn=generator.run, inputs=[idx], outputs=output)
+
+    app.launch(server_name="0.0.0.0", server_port=8070, share=True)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.0-devel-ubuntu18.04 as gpu
+FROM nvidia/cuda:11.6.0-devel-ubuntu18.04
 
 WORKDIR /usr/src
 
