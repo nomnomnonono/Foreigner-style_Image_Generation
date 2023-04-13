@@ -1,0 +1,19 @@
+version: "3"
+services:
+  foreigner_generation:
+    container_name: foreigner_generation
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: foreigner_generation
+    volumes:
+      - .:/usr/src
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    shm_size: '2gb'

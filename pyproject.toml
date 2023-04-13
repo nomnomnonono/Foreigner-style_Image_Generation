@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "foreigner-style-image-generation"
+version = "0.1.0"
+description = ""
+authors = ["nomnomnonono <murumuru1204@gmail.com>"]
+readme = "README.md"
+packages = [{include = "foreigner_style_image_generation"}]
+
+[tool.poetry.dependencies]
+python = "^3.7.12"
+torch = "^1.10.1"
+torchvision = "^0.11.2"
+requests = "^2.27.1"
+tqdm = "^4.62.3"
+cmake = "^3.22.1"
+ninja = "^1.10.2.3"
+
+[tool.poetry.group.dev.dependencies]
+pysen = {version = "^0.10.4", extras = ["lint"]}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pysen]
+version = "0.10.4"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = false
+mypy_preset = "strict"
+line_length = 88
+py_version = "py38"
+
+[tool.pysen.lint.source]
+excludes = [".venv"]
+
+[[tool.pysen.lint.mypy_targets]]
+paths = ["."]
