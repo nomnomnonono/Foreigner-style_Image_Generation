@@ -1,3 +1,9 @@
-StyleCariGAN/
-checkpoint
+checkpoint/
+result/
+reference/*.jpg
+sample/
+invert/
 .venv
+__pycache__
+*.dat
+*.dat.bz2

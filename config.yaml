@@ -1,0 +1,26 @@
+invert:
+  w_iterations: 250
+  wp_iterations: 2000
+  size: 256
+  latent: 512
+  num_layers: 14
+  lambda_l2: 1
+  lambda_p: 1
+  lambda_noise: 1e5
+  wlr: 4e-3
+  lr_decay_rate: 0.2
+  result_dir: ./invert
+  device: cuda
+  checkpoint: checkpoint/generator_ffhq.pt
+generate:
+  result_dir: ./result
+  device: cuda
+  reference: reference/reference.pt
+  size: 256
+  truncation_mean: 4096
+  truncation: 1
+  checkpoint: checkpoint/generator_ffhq.pt
+  latent: 512
+  num_layers: 14
+  n_mlp: 8
+  channel_multiplier: 2
