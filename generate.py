@@ -43,7 +43,7 @@ class Generater:
                 )
             ):
                 inv = Invert()
-                invert_file = inv.run(image)
+                inversion_file = inv.run(image)
             self.image_name = os.path.split(image)[-1].split(".")[0]
             self.generate(g_ema, mean_latent, inversion_file)
         else:
