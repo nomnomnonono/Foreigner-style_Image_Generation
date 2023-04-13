@@ -1,7 +1,7 @@
 import math
 
 import torch
-from op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
+from src.op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
 from torch import nn
 from torch.nn import functional as F
 from torchvision.models import resnet18

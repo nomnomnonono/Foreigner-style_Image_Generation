@@ -3,9 +3,9 @@ import os
 
 import numpy as np
 import torch
-from align import ImageAlign
-from exaggeration_model import LayerSwapGenerator
 from omegaconf import OmegaConf
+from src.align import ImageAlign
+from src.exaggeration_model import LayerSwapGenerator
 from torchvision import transforms
 from tqdm import tqdm
 
