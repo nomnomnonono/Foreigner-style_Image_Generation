@@ -16,6 +16,7 @@ cmake = "^3.22.1"
 ninja = "^1.10.2.3"
 omegaconf = "^2.3.0"
 numpy = "1.21"
+gradio = "^3.25.0"
 
 [tool.poetry.group.dev.dependencies]
 pysen = {version = "^0.10.4", extras = ["lint"]}

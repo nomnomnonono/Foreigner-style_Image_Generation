@@ -16,4 +16,9 @@ services:
               count: all
               capabilities: [gpu]
     tty: true
+    restart: always
+    expose:
+      - "8070"
+    ports:
+      - "8070:8070"
     shm_size: '2gb'
